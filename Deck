@@ -1,0 +1,23 @@
+public class Dealer {
+    private List<Card> deck;
+
+    public Dealer() {
+        this.deck = new ArrayList<>();
+        generateDeck();
+    }
+
+    private void generateDeck() {
+        for (Card.Suit suit : Card.Suit.values()) {
+            for (Card.Rank rank : Card.Rank.values()) {
+                deck.add(new Card(suit, rank));
+            }
+        }
+    }
+
+    public Card dealCard() {
+        if (deck.isEmpty()) {
+            generateDeck();
+        }
+        return deck.remove(0);
+    }
+}

@@ -1,24 +1,4 @@
 public class Card {
-    private String suit;
-    private String rank;
-    private int value;
-
-    private static final String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
-    private static final String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
-
-    public Card(String suit, String rank, int value) {
-        this.suit = s;
-        this.rank = r;
-        this.value = v;
-    }
-}
-
-
-
-
-
-/*
-public class Card {
     public enum Suit {Hearts, Diamonds, Clubs, Spades}
     public enum Rank {Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Ace}
 
@@ -38,23 +18,16 @@ public class Card {
         return rank;
     }
 
-    public int getBlackjackValue() {
+    public int getBlackjackValue(boolean aceHigh) {
         switch (rank) {
             case Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten:
-                return Integer.parseInt(rank.toString()); // Convert rank name to integer for numbered cards
+                return Integer.parseInt(rank.toString()); 
             case Jack, Queen, King:
-                return 10; // Face cards are worth 10
+                return 10;
             case Ace:
-                return 11; // Aces can be worth 11 in Blackjack
+                return aceHigh ? 11 : 1;
             default:
                 throw new IllegalStateException("Unexpected value: " + rank);
         }
     }
-
-    @Override
-    public String toString() {
-        return rank + " of " + suit;
-    }
 }
-
-*/

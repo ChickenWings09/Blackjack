@@ -1,7 +1,10 @@
-public class Dealer {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Deck {
     private List<Card> deck;
 
-    public Dealer() {
+    public Deck() {
         this.deck = new ArrayList<>();
         generateDeck();
     }

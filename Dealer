@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Dealer {
     private List<Card> hand;
-    private boolean aceHigh;
+    fprivate boolean aceHigh;
 
     public Dealer() {
         this.hand = new ArrayList<>();
@@ -21,7 +21,12 @@ public class Dealer {
     }
 
     private void updateAceHigh() {
-        aceHigh = calculateHandValue() + 11 <= 21;
+        int handValue = calculateHandValue();
+        if (handValue + 11 <= 21) {
+            aceHigh = true;
+        } else {
+            aceHigh = false;
+        }
     }
 
     public boolean shouldDrawCard() {

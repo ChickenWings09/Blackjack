@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Dealer {
     private List<Card> hand;
-    fprivate boolean aceHigh;
+    private boolean aceHigh;
 
     public Dealer() {
         this.hand = new ArrayList<>();

@@ -53,4 +53,12 @@ public class Player {
         } while (choice != 1 && choice != 11);
         return choice;
     }
+    
+    public boolean hasBlackjack() {
+        return hand.size() == 2 && calculateHandValue() == 21;
+    }
+
+    public boolean isBust() {
+        return calculateHandValue() > 21;
+    }
 }

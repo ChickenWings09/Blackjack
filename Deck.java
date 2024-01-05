@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
 
 public class Deck {
     private List<Card> deck;
@@ -7,6 +8,7 @@ public class Deck {
     public Deck() {
         this.deck = new ArrayList<>();
         generateDeck();
+        Collections.shuffle(deck);
     }
 
     private void generateDeck() {

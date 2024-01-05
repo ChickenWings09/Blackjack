@@ -21,7 +21,7 @@ public class Card {
     public int getBlackjackValue(boolean aceHigh) {
         switch (rank) {
             case Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten:
-                return Integer.parseInt(rank.toString()); 
+                return rank.ordinal()+2; 
             case Jack, Queen, King:
                 return 10;
             case Ace:
@@ -29,5 +29,10 @@ public class Card {
             default:
                 throw new IllegalStateException("Unexpected value: " + rank);
         }
+    }
+
+    @Override
+    public String toString() {
+        return rank + " of " + suit;
     }
 }
